@@ -1,4 +1,4 @@
-# GNOME Bluetooth discoverability fix
+# libgnome-bluetooth-no-discoverability
 
 Unofficial modified rebuilds of Ubuntu 22.04 packages: GNOME Settings and
 GNOME Shell asked BlueZ to advertise the machine while scanning. The patches

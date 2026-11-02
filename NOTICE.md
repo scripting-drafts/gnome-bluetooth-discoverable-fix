@@ -16,5 +16,6 @@ Debian, or the GNOME Project. They retain the upstream license; each package
 contains its Debian copyright file. Exact source URLs and checksums are in
 `SOURCE`; build steps are in `BUILDING.md`.
 
-The `+local1` suffix marks the local modification. The unmodified original
-versions are listed above.
+The `+local1` suffix marks the local modification. It follows the
+`dch --local` convention for non-official local rebuilds; official Ubuntu
+revisions use `ubuntuN`. The unmodified original versions are listed above.
