@@ -1,15 +1,20 @@
 # Building
 
-The packages were built from the matching Ubuntu 22.04 source packages with
-the patches in `patches/` applied.
+These packages are modified rebuilds of the Ubuntu 22.04 sources listed in
+`SOURCE`. The local version is `+local1`; each changelog entry and
+`debian/<package>.docs` install a `README.modified` file.
 
-- gnome-bluetooth 3.34.5-8:
-  http://archive.ubuntu.com/ubuntu/pool/main/g/gnome-bluetooth/
-- gnome-bluetooth3 42.0-5:
-  http://archive.ubuntu.com/ubuntu/pool/main/g/gnome-bluetooth3/
+Enable `deb-src` in APT, then install the build dependencies:
 
-Apply the patch to `debian/patches/series`, then build with:
+```
+sudo apt-get build-dep gnome-bluetooth gnome-bluetooth3
+```
+
+Extract the source packages, add the matching patch to
+`debian/patches/series`, add the `+local1` changelog entry, then build:
 
 ```
 DEB_BUILD_OPTIONS=nodoc,nocheck dpkg-buildpackage -b -uc -us
 ```
+
+The build must run in Ubuntu 22.04 (jammy) or a matching container.

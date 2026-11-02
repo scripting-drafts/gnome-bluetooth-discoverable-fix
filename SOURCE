@@ -1,0 +1,25 @@
+# Source
+
+Exact Ubuntu source files used for the `+local1` rebuilds.
+
+## gnome-bluetooth 3.34.5-8 (Settings, legacy library)
+
+- dsc: http://archive.ubuntu.com/ubuntu/pool/main/g/gnome-bluetooth/gnome-bluetooth_3.34.5-8.dsc
+- orig: http://archive.ubuntu.com/ubuntu/pool/main/g/gnome-bluetooth/gnome-bluetooth_3.34.5.orig.tar.xz
+- debian: http://archive.ubuntu.com/ubuntu/pool/main/g/gnome-bluetooth/gnome-bluetooth_3.34.5-8.debian.tar.xz
+
+SHA256:
+- 6c949e52c8becc2054daacd604901f66ce5cf709a5fa91c4bb7cacc939b53ea9  gnome-bluetooth_3.34.5.orig.tar.xz
+- 09984140fa1b37f3acfe274af0a00a06981d8553c0401058328c90777a1f94a0  gnome-bluetooth_3.34.5-8.debian.tar.xz
+
+## gnome-bluetooth3 42.0-5 (GNOME Shell library)
+
+- dsc: http://archive.ubuntu.com/ubuntu/pool/main/g/gnome-bluetooth3/gnome-bluetooth3_42.0-5.dsc
+- orig: http://archive.ubuntu.com/ubuntu/pool/main/g/gnome-bluetooth3/gnome-bluetooth3_42.0.orig.tar.xz
+- debian: http://archive.ubuntu.com/ubuntu/pool/main/g/gnome-bluetooth3/gnome-bluetooth3_42.0-5.debian.tar.xz
+
+SHA256:
+- 3d1e2720673bc9a242619dc5d231fd6e776c18a49da29f43cdc433055adb0170  gnome-bluetooth3_42.0.orig.tar.xz
+- 0ee75a8f7db1a7d0c87787d833606108f31dc0dd55f2366a29cf0db06ef4f3e6  gnome-bluetooth3_42.0-5.debian.tar.xz
+
+The modifications are the patch files in `patches/`.

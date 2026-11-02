@@ -1,10 +1,10 @@
 # GNOME Bluetooth discoverability fix
 
-Ubuntu 22.04 GNOME Settings and GNOME Shell asked BlueZ to advertise the
-machine while scanning. BlueZ's reaction is documented; these patches make
-both GNOME client libraries send Discoverable=false instead.
+Unofficial modified rebuilds of Ubuntu 22.04 packages: GNOME Settings and
+GNOME Shell asked BlueZ to advertise the machine while scanning. The patches
+make both GNOME client libraries send Discoverable=false instead.
 
-- packages/ — amd64 debs for the patched libraries (42.0-5, 3.34.5-8)
-- patches/ — corresponding Ubuntu source patches
-- TODO.md — remaining Pairable behavior
-Install after a package upgrade: `sudo dpkg -i packages/*.deb`
+- packages/ — `+local1` debs (3.34.5-8+local1, 42.0-5+local1), amd64
+- patches/ — Ubuntu source patches; see NOTICE.md and BUILDING.md
+- TODO.md, MAINTENANCE.md — remaining work and upgrade reminder
+Not from Ubuntu/Canonical. Install with `sudo dpkg -i packages/*.deb`
