@@ -1,0 +1,22 @@
+Description: Do not request discoverability from the settings widget
+ The BluetoothSettingsWidget sets default-adapter-discoverable to true
+ whenever an adapter is present. That makes BlueZ advertise the machine
+ while the Bluetooth settings panel is open, because the discovery
+ filter's Discoverable flag is documented as "Make adapter discoverable
+ while discovering".
+ .
+ Keep scanning enabled but do not request discoverability.
+Forwarded: not-needed
+Last-Update: 2026-11-02
+---
+--- a/lib/bluetooth-settings-widget.c
++++ b/lib/bluetooth-settings-widget.c
+@@ -1398,7 +1398,7 @@
+ 	g_debug ("Default adapter changed to: %s", default_adapter ? default_adapter : "(none)");
+ 
+ 	g_object_set (G_OBJECT (client), "default-adapter-discovering", default_adapter != NULL, NULL);
+-	g_object_set (G_OBJECT (client), "default-adapter-discoverable", default_adapter != NULL, NULL);
++	g_object_set (G_OBJECT (client), "default-adapter-discoverable", FALSE, NULL);
+ 
+ 	g_signal_emit (G_OBJECT (self), signals[ADAPTER_STATUS_CHANGED], 0);
+ }

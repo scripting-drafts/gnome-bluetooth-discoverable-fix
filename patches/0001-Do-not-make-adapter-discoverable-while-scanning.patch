@@ -1,0 +1,22 @@
+Description: Do not make the adapter discoverable while scanning
+ gnome-bluetooth sends the BlueZ "Discoverable" discovery filter as
+ true. BlueZ documents that flag as "Make adapter discoverable while
+ discovering", so merely opening the Bluetooth settings panel scans for
+ devices and advertises this machine at the same time.
+ .
+ Send false instead so scanning for remote devices does not expose the
+ local adapter.
+Forwarded: not-needed
+Last-Update: 2026-11-02
+---
+--- a/lib/bluetooth-client.c
++++ b/lib/bluetooth-client.c
+@@ -1165,7 +1165,7 @@
+ 	if (discovering) {
+ 		g_variant_builder_init (&builder, G_VARIANT_TYPE_VARDICT);
+ 		g_variant_builder_add (&builder, "{sv}",
+-				       "Discoverable", g_variant_new_boolean (TRUE));
++				       "Discoverable", g_variant_new_boolean (FALSE));
+ 		adapter1_call_set_discovery_filter (ADAPTER1 (adapter),
+ 						    g_variant_builder_end (&builder),
+ 						    client->cancellable,
